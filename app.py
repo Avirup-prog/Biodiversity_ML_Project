@@ -358,7 +358,7 @@ def load_and_train():
     scaler = StandardScaler()
     X_tr_sc = scaler.fit_transform(X_train)
     X_te_sc = scaler.transform(X_test)
-    model = LogisticRegression(multi_class='multinomial', solver='lbfgs', max_iter=1000, random_state=42)
+    model = LogisticRegression(solver='lbfgs', max_iter=1000, random_state=42)
     model.fit(X_tr_sc, y_train)
     y_pred = model.predict(X_te_sc)
     acc    = accuracy_score(y_test, y_pred)
